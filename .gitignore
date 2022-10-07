@@ -2,3 +2,4 @@ HowMuchWasSpentMonthly.json
 AveragePricePerDay.json
 FrequencyDistributionOfPricesByHours.json
 HowMuchDidPay.json
+.DS_store
