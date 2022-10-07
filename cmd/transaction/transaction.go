@@ -87,12 +87,31 @@ func (t *Transactions) AveragePricePerDay(date string) ([]byte, error) {
 // 3. Частотное распределение цены по часам;
 func (t *Transactions) FrequencyDistributionOfPricesByHours() ([]byte, error) {
 	if len(t.Transaction) > 0 {
+		// // создание массива структур для хранения частотного распределения цены по часам за весь период
+		// frequencyDistribution := make(map[string][]float64)
+		// // цикл по элементам списка транзакций
+		// for _, val := range t.Transaction {
+		// 	// в массив структур для частотного распределения записывается по элементно дата и цена
+		// 	frequencyDistribution[val.Time[9:]] = append(frequencyDistribution[val.Time[9:]], val.GasPrice)
+		// }
+		// // перевод данных в json формат
+		// data, err := json.Marshal(frequencyDistribution)
+		// if err != nil {
+		// 	return nil, err
+		// }
+
 		// создание массива структур для хранения частотного распределения цены по часам за весь период
-		frequencyDistribution := make(map[string][]float64)
+		frequencyDistribution := make(map[string][]struct {
+			Date  string  `json:"date"`
+			Price float64 `json:"price"`
+		})
 		// цикл по элементам списка транзакций
 		for _, val := range t.Transaction {
 			// в массив структур для частотного распределения записывается по элементно дата и цена
-			frequencyDistribution[val.Time[9:]] = append(frequencyDistribution[val.Time[9:]], val.GasPrice)
+			frequencyDistribution[val.Time[9:]] = append(frequencyDistribution[val.Time[9:]], struct {
+				Date  string  `json:"date"`
+				Price float64 `json:"price"`
+			}{Date: val.Time[:8], Price: val.GasPrice})
 		}
 		// перевод данных в json формат
 		data, err := json.Marshal(frequencyDistribution)
