@@ -6,6 +6,7 @@ clean:
 	rm -f results/4.HowMuchDidPay.json
 
 build: clean
+	go get github.com/ilyakaznacheev/cleanenv
 	go build cmd/main/main.go
 
 run: build
