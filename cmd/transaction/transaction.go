@@ -87,6 +87,7 @@ func (t *Transactions) AveragePricePerDay(date string) ([]byte, error) {
 // 3. Частотное распределение цены по часам;
 func (t *Transactions) FrequencyDistributionOfPricesByHours() ([]byte, error) {
 	if len(t.Transaction) > 0 {
+		// реализация время - цены
 		// // создание массива структур для хранения частотного распределения цены по часам за весь период
 		// frequencyDistribution := make(map[string][]float64)
 		// // цикл по элементам списка транзакций
@@ -100,6 +101,7 @@ func (t *Transactions) FrequencyDistributionOfPricesByHours() ([]byte, error) {
 		// 	return nil, err
 		// }
 
+		// реализация время -> даты и цены
 		// создание массива структур для хранения частотного распределения цены по часам за весь период
 		frequencyDistribution := make(map[string][]struct {
 			Date  string  `json:"date"`
