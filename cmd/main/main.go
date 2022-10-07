@@ -106,6 +106,8 @@ func main() {
 			// выход из программы
 			fmt.Println("Good bye!")
 			return
+		default:
+			fmt.Println("Error: неизветное действие!")
 		}
 	}
 }
