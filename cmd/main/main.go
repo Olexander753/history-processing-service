@@ -43,7 +43,7 @@ func main() {
 				fmt.Println(string(data))
 
 				// вызов функции записи данных в файл
-				err = writeToJson("1)HowMuchWasSpentMonthly.json", data)
+				err = writeToJson("1.HowMuchWasSpentMonthly.json", data)
 				if err != nil {
 					fmt.Println(err)
 				}
@@ -64,7 +64,7 @@ func main() {
 				fmt.Println(string(data))
 
 				// вызов функции записи данных в файл
-				err = writeToJson("2)AveragePricePerDay.json", data)
+				err = writeToJson("2.AveragePricePerDay.json", data)
 				if err != nil {
 					fmt.Println(err)
 				}
@@ -80,7 +80,7 @@ func main() {
 				fmt.Println(string(data))
 
 				// вызов функции записи данных в файл
-				err = writeToJson("3)FrequencyDistributionOfPricesByHours.json", data)
+				err = writeToJson("3.FrequencyDistributionOfPricesByHours.json", data)
 				if err != nil {
 					fmt.Println(err)
 				}
@@ -96,7 +96,7 @@ func main() {
 				fmt.Println(string(data))
 
 				// вызов функции записи данных в файл
-				err = writeToJson("4)HowMuchDidPay.json", data)
+				err = writeToJson("4.HowMuchDidPay.json", data)
 				if err != nil {
 					fmt.Println(err)
 				}

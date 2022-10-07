@@ -1,5 +1,9 @@
 clean:
 	rm -f main
+	rm -f results/1.HowMuchWasSpentMonthly.json
+	rm -f results/2.AveragePricePerDay.json
+	rm -f results/3.FrequencyDistributionOfPricesByHours.json
+	rm -f results/4.HowMuchDidPay.json
 
 build: clean
 	go build cmd/main/main.go
